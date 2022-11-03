@@ -1,24 +1,24 @@
-datasets/road2020/train/India/images/India_000005.jpg
-datasets/road2020/train/India/images/India_000011.jpg
-datasets/road2020/train/India/images/India_000014.jpg
-datasets/road2020/train/India/images/India_000027.jpg
-datasets/road2020/train/India/images/India_002754.jpg
-datasets/road2020/train/India/images/India_003119.jpg
-datasets/road2020/train/India/images/India_003845.jpg
-datasets/road2020/train/India/images/India_005166.jpg
-datasets/road2020/train/India/images/India_005991.jpg
-datasets/road2020/train/India/images/India_008689.jpg
-datasets/road2020/train/India/images/India_001297.jpg
-datasets/road2020/train/India/images/India_007516.jpg
-datasets/road2020/train/India/images/India_003065.jpg
-datasets/road2020/train/India/images/India_005188.jpg
-datasets/road2020/train/India/images/India_003001.jpg
-datasets/road2020/train/India/images/India_006318.jpg
-datasets/road2020/train/India/images/India_005674.jpg
-datasets/road2020/train/India/images/India_006127.jpg
-datasets/road2020/train/India/images/India_003207.jpg
-datasets/road2020/train/India/images/India_009805.jpg
-datasets/road2020/train/India/images/India_002916.jpg
+datasets/train/India/images/India_000005.jpg
+datasets/train/India/images/India_000011.jpg
+datasets/train/India/images/India_000014.jpg
+datasets/train/India/images/India_000027.jpg
+datasets/train/India/images/India_002754.jpg
+datasets/train/India/images/India_003119.jpg
+datasets/train/India/images/India_003845.jpg
+datasets/train/India/images/India_005166.jpg
+datasets/train/India/images/India_005991.jpg
+datasets/train/India/images/India_008689.jpg
+datasets/train/India/images/India_001297.jpg
+datasets/train/India/images/India_007516.jpg
+datasets/train/India/images/India_003065.jpg
+datasets/train/India/images/India_005188.jpg
+datasets/train/India/images/India_003001.jpg
+datasets/train/India/images/India_006318.jpg
+datasets/train/India/images/India_005674.jpg
+datasets/train/India/images/India_006127.jpg
+datasets/train/India/images/India_003207.jpg
+datasets/train/India/images/India_009805.jpg
+datasets/train/India/images/India_002916.jpg
 
 
 

@@ -21,7 +21,8 @@ from utils.torch_utils import select_device, load_classifier, time_synchronized
 save_csv = True
 csv_f = open("results.csv","w")
 
-
+def streamlit_inference(img):
+    pass 
 def inference(save_img=False):
     out, source, weights, view_img, save_txt, imgsz = \
         opt.output, opt.source, opt.weights, opt.view_img, opt.save_txt, opt.img_size
