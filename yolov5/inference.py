@@ -17,12 +17,37 @@ from utils.general import (
     xyxy2xywh, plot_one_box, strip_optimizer, set_logging)
 from utils.torch_utils import select_device, load_classifier, time_synchronized
 
+import streamlit as st
+import tensorflow as tf
 
 save_csv = True
 csv_f = open("results.csv","w")
 
-def streamlit_inference(img):
-    pass 
+def transform_images(img,size):
+  img = tf.image.resize(img,(size,size))
+  img = img / 255
+  return img
+
+def streamlit_inference(img, cf, iou, weights):
+
+    device = select_device('cpu')
+    model = attempt_load(weights, map_location=device)
+    img = torch.from_numpy(img).to(device)
+    img = img.half() if half else img.float()  # uint8 to fp16/32
+    img /= 255.0  # 0 - 255 to 0.0 - 1.0
+    if img.ndimension() == 3:
+        img = img.unsqueeze(0)
+
+    # Inference
+    t1 = time_synchronized()
+    pred = model(img, augment=opt.augment)[0]
+
+    # Apply NMS
+    pred = non_max_suppression(pred, opt.conf_thres, opt.iou_thres, classes=opt.classes, agnostic=opt.agnostic_nms)
+    t2 = time_synchronized()
+
+
+
 def inference(save_img=False):
     out, source, weights, view_img, save_txt, imgsz = \
         opt.output, opt.source, opt.weights, opt.view_img, opt.save_txt, opt.img_size
