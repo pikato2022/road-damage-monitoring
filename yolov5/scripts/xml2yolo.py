@@ -7,7 +7,7 @@ from PIL import Image
 from collections import defaultdict
 from random import shuffle
 
-
+## Parse PASCVOC to YOLO format
 #Type of image in Dataset
 imageType = ["jpg","png","jpeg","JPEG","JPG","PNG"]
 #dictionary to store list of image paths in each class
@@ -55,9 +55,9 @@ def getFileList3(filePath):
 
 def main():
 
-    parser = argparse.ArgumentParser(description='run phase2.')
-    parser.add_argument('--class_file', type=str, help='path of the file containing list of classes of detection problem. sample file at "datasets/road2020/damage_classes.txt"',default='datasets/road2020/damage_classes.txt')
-    parser.add_argument('--input_file', type=str, help='location to the list of images/xml files(absolute path). sample file at "datasets/road2020/train.txt"',default='datasets/road2020/train.txt')
+    parser = argparse.ArgumentParser(description='Parse input to YOLO format')
+    parser.add_argument('--class_file', type=str, help='Path of damage class',default='datasets/damage_classes.txt')
+    parser.add_argument('--input_file', type=str, help='Path of train images (train.txt)',default='datasets/train.txt')
     args = parser.parse_args()
 
     #assign each class of dataset to a number
@@ -98,15 +98,15 @@ def main():
         
         #loop over each object tag in annotation tag
         for objects in root.findall('object'):
-            surfaceType = objects.find('name').text.replace(" ","")
+            crackType = objects.find('name').text.replace(" ","")
     
             
-            if surfaceType=="D00" or surfaceType=="D10" or surfaceType=="D20" or surfaceType=="D40":
+            if crackType=="D00" or crackType=="D10" or crackType=="D20" or crackType=="D40":
                 bndbox = objects.find('bndbox')
                 [minX,minY,maxX,maxY] = [int(child.text) for child in bndbox]
                 [x,y,w,h] = getYoloNumbers(imageFile,minX,minY,maxX, maxY)
-                yoloOutput.write(str(outputCtoId[surfaceType])+" "+str(x)+" "+str(y)+" "+str(w)+" "+str(h)+"\n")
-                imageListDict[outputCtoId[surfaceType]].add(imageFile)
+                yoloOutput.write(str(outputCtoId[crackType])+" "+str(x)+" "+str(y)+" "+str(w)+" "+str(h)+"\n")
+                imageListDict[outputCtoId[crackType]].add(imageFile)
                 
         
         yoloOutput.close()
