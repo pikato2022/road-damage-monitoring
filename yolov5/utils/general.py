@@ -988,6 +988,7 @@ def plot_one_box(x, img, color=None, label=None, line_thickness=None):
         c2 = c1[0] + t_size[0], c1[1] - t_size[1] - 3
         cv2.rectangle(img, c1, c2, color, -1, cv2.LINE_AA)  # filled
         cv2.putText(img, label, (c1[0], c1[1] - 2), 0, tl / 3, [225, 255, 255], thickness=tf, lineType=cv2.LINE_AA)
+        # print("DRAWING LABEL BOX DONEEEEEEEE")
 
 
 def plot_wh_methods():  # from utils.general import *; plot_wh_methods()
