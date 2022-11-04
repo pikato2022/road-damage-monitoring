@@ -9,7 +9,7 @@ import inference
 from utils.datasets import LoadStreams, LoadImages
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(os.path.dirname(SCRIPT_DIR))
-
+local_path = os.path.dirname(__file__)
 def run():
 
     st.title("Road Damage Monitoring POC")
@@ -34,8 +34,8 @@ def run():
         st.write('** Please upload an image **')
 
     if st.button('Detect Objects'):
-
-        inference.steamlit_detect(image, temp_path, confidence_slider, IOU_slider, './results/best.pt')
+        
+        inference.steamlit_detect(image, temp_path, confidence_slider, IOU_slider, local_path +'/results/best.pt')
         # st.image(image, caption = 'Processed Image', use_column_width = True)
         # st.write(labels)
 
