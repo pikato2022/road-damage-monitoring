@@ -17,16 +17,11 @@ from utils.general import (
     xyxy2xywh, plot_one_box, strip_optimizer, set_logging)
 from utils.torch_utils import select_device, load_classifier, time_synchronized
 import streamlit as st
-import tensorflow as tf
 from PIL import Image
 
 save_csv = True
 csv_f = open("results.csv","w")
 
-def transform_images(img,size):
-  img = tf.image.resize(img,(size,size))
-  img = img / 255
-  return img
 def save_uploaded_file(uploadedfile, tempDir):
     orig_img_path = os.path.join(tempDir, "in")
     if not os.path.exists(orig_img_path):
