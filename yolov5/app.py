@@ -35,7 +35,7 @@ def run():
 
     if st.button('Detect Objects'):
 
-        inference.steamlit_detect(image, temp_path, confidence_slider, IOU_slider, 'results/best.pt')
+        inference.steamlit_detect(image, temp_path, confidence_slider, IOU_slider, './results/best.pt')
         # st.image(image, caption = 'Processed Image', use_column_width = True)
         # st.write(labels)
 
